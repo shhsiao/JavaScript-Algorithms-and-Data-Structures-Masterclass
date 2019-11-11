@@ -1,0 +1,28 @@
+{
+  "name": "JavaScript-Algorithms-and-Data-Structures-Masterclass",
+  "version": "1.0.0",
+  "description": "Practices from [Udemy course](https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/)",
+  "main": "index.js",
+  "scripts": {
+    "start":"npx nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shhsiao/JavaScript-Algorithms-and-Data-Structures-Masterclass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shhsiao/JavaScript-Algorithms-and-Data-Structures-Masterclass/issues"
+  },
+  "homepage": "https://github.com/shhsiao/JavaScript-Algorithms-and-Data-Structures-Masterclass#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
+    "ts-node": "^8.5.0",
+    "typescript": "^3.7.2"
+  }
+}
