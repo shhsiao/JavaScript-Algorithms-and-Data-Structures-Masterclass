@@ -4,9 +4,10 @@
   "description": "Practices from [Udemy course](https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/)",
   "main": "index.js",
   "scripts": {
-    "start":"npx nodemon",
+    "start": "npx nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shhsiao/JavaScript-Algorithms-and-Data-Structures-Masterclass.git"
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/shhsiao/JavaScript-Algorithms-and-Data-Structures-Masterclass#readme",
   "dependencies": {},
   "devDependencies": {
+    "@types/node": "^13.9.2",
     "jest": "^24.9.0",
     "nodemon": "^1.19.4",
     "ts-node": "^8.5.0",
