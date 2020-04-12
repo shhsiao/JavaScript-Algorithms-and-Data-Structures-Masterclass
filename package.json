@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "type": "module",
   "repository": {
@@ -15,15 +15,25 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "jest": {
+    "verbose": true,
+    "transform": {
+      ".(ts)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts)$",
+    "moduleFileExtensions": ["ts","js"]
+  },
   "bugs": {
     "url": "https://github.com/shhsiao/JavaScript-Algorithms-and-Data-Structures-Masterclass/issues"
   },
   "homepage": "https://github.com/shhsiao/JavaScript-Algorithms-and-Data-Structures-Masterclass#readme",
   "dependencies": {},
   "devDependencies": {
+    "@types/jest": "^25.2.1",
     "@types/node": "^13.9.2",
     "jest": "^24.9.0",
     "nodemon": "^1.19.4",
+    "ts-jest": "^25.3.1",
     "ts-node": "^8.5.0",
     "typescript": "^3.7.2"
   }
