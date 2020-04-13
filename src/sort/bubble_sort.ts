@@ -1,4 +1,5 @@
-export function BubbleSort(list: number[]): number[] {
+import { swap } from './swap';
+export function bubbleSort(list: number[]): number[] {
     const ans = list.slice();
     for (let i = ans.length; i > 0; i--) {
         let swapInvoked = false;
@@ -13,8 +14,4 @@ export function BubbleSort(list: number[]): number[] {
         }
     }
     return ans;
-}
-
-export function swap(list: number[], idx1: number, idx2: number) {
-    [list[idx2], list[idx1]] = [list[idx1], list[idx2]];
 }
