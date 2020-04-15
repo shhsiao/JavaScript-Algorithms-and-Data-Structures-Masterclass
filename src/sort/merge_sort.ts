@@ -23,7 +23,9 @@ function merge(list1: number[], list2: number[]): number[] {
 }
 
 function mergeSort(list: number[]) {
-    if (list.length <= 1) return list;
+    if (list.length <= 1) {
+        return list;
+    }
     const mid: number = Math.floor(list.length / 2);
     const left: number[] = mergeSort(list.slice(0, mid));
     const right: number[] = mergeSort(list.slice(mid));
