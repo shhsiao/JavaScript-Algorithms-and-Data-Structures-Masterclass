@@ -10,14 +10,17 @@ function digitCount(num: number): number {
 }
 
 function mostDigits(numList: number[]): number {
-    return Math.max(...numList);
+    return digitCount(Math.max(...numList));
 }
 
 function radixSort(numList: number[]) {
     let ans: number[] = numList.slice();
     const maxDigitCount = mostDigits(ans);
     for (let i = 0; i < maxDigitCount; i++) {
-        const digitBuckets: Array<Array<number>> = Array(10).fill([]);
+        const digitBuckets: Array<Array<number>> = Array.from(
+            { length: 10 },
+            () => []
+        );
         ans.forEach((v) => {
             const digit = getDigit(v, i);
             digitBuckets[digit].push(v);

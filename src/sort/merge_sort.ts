@@ -31,5 +31,3 @@ function mergeSort(list: number[]) {
     const right: number[] = mergeSort(list.slice(mid));
     return merge(left, right);
 }
-
-console.log(mergeSort([10, 24, 76, 73, 1, 9]));
