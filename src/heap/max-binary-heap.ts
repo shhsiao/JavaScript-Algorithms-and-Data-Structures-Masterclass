@@ -71,7 +71,3 @@ class MaxBinaryHeap {
         }
     }
 }
-
-const heap = new MaxBinaryHeap();
-heap.insert(60);
-console.log(heap);
