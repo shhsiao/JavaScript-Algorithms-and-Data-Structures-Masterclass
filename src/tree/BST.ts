@@ -10,14 +10,12 @@ class TreeNode {
 }
 
 class BinarySearchTree {
-    root: TreeNode | null;
-    constructor() {
-        this.root = null;
-    }
+    root: TreeNode | null = null;
+    constructor() {}
 
     insert(value: number) {
         const newNode = new TreeNode(value);
-        if (this.root === null) {
+        if (!this.root) {
             this.root = newNode;
             return this;
         }
@@ -27,14 +25,14 @@ class BinarySearchTree {
                 return null;
             }
             if (value < current.value) {
-                if (current.left === null) {
+                if (!current.left) {
                     current.left = newNode;
                     return this;
                 } else {
                     current = current.left;
                 }
             } else if (value > current.value) {
-                if (current.right === null) {
+                if (!current.right) {
                     current.right = newNode;
                     return this;
                 } else {
@@ -45,7 +43,7 @@ class BinarySearchTree {
     }
 
     find(value: number) {
-        if (this.root === null) {
+        if (!this.root) {
             return false;
         }
         let current: TreeNode | null = this.root,
@@ -63,7 +61,7 @@ class BinarySearchTree {
     }
 
     constain(value: number) {
-        if (this.root === null) {
+        if (!this.root) {
             return false;
         }
         let current: TreeNode | null = this.root;
