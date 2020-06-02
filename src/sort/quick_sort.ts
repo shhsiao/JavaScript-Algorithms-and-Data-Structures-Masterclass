@@ -15,7 +15,7 @@ function pivot(list: number[], start = 0, end = list.length + 1): number {
     return swapIndex;
 }
 
-function quickSort(list: number[], left = 0, right = list.length - 1) {
+export function quickSort(list: number[], left = 0, right = list.length - 1) {
     if (left >= right) {
         return list;
     }

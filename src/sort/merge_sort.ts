@@ -22,7 +22,7 @@ function merge(list1: number[], list2: number[]): number[] {
     return result;
 }
 
-function mergeSort(list: number[]) {
+export function mergeSort(list: number[]) {
     if (list.length <= 1) {
         return list;
     }

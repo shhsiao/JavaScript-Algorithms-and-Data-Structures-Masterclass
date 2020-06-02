@@ -16,4 +16,3 @@ export function selectionSort(list: number[]) {
     return ans;
 }
 
-console.log(selectionSort([4, 1, 2, 3]));

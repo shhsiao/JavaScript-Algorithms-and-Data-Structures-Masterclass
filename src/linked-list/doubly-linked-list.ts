@@ -9,7 +9,7 @@ class DoublyLinkedNode {
     }
 }
 
-class DoublyLinkedList<T> {
+export class DoublyLinkedList<T> {
     head: null | DoublyLinkedNode;
     tail: null | DoublyLinkedNode;
     length: number;
@@ -18,6 +18,7 @@ class DoublyLinkedList<T> {
         this.tail = null;
         this.length = 0;
     }
+
     push(val: T): DoublyLinkedList<T> {
         const newNode = new DoublyLinkedNode(val);
         if (!this.head) {
@@ -89,7 +90,6 @@ class DoublyLinkedList<T> {
         }
         if (index <= this.length / 2) {
             // working from start
-            console.log('start');
             let count = 0;
             let current = this.head as DoublyLinkedNode;
             while (count !== index) {
@@ -99,7 +99,6 @@ class DoublyLinkedList<T> {
             return current;
         } else {
             // working from end
-            console.log('end');
             let count = this.length - 1;
             let current = this.tail as DoublyLinkedNode;
             while (count !== index) {
@@ -159,5 +158,15 @@ class DoublyLinkedList<T> {
         removedNode.next = null;
         this.length--;
         return removedNode;
+    }
+
+    traverse(): Array<T> {
+        let current = this.head;
+        const valueList = [];
+        while (current) {
+            valueList.push(current.val);
+            current = current?.next;
+        }
+        return valueList;
     }
 }

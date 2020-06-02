@@ -7,7 +7,7 @@ class SinglyLinkedNode {
     }
 }
 
-class SinglyLinkedList<T> {
+export class SinglyLinkedList<T> {
     head: null | SinglyLinkedNode;
     tail: null | SinglyLinkedNode;
     length: number;
@@ -57,7 +57,7 @@ class SinglyLinkedList<T> {
         }
         let headNode = this.head;
         this.head = this.head.next;
-        this.length - 1;
+        this.length -= 1;
         if (this.length === 0) {
             this.tail = null;
         }
@@ -124,6 +124,9 @@ class SinglyLinkedList<T> {
         if (index === this.length - 1) {
             return this.pop();
         }
+        if (index === 0) {
+            return this.shift();
+        }
         const pre = <SinglyLinkedNode>this.get(index - 1);
         const removed = <SinglyLinkedNode>pre.next;
         pre.next = removed.next;
@@ -146,11 +149,13 @@ class SinglyLinkedList<T> {
         return this;
     }
 
-    traverse() {
+    traverse(): Array<T> {
         let current = this.head;
+        const valueList = [];
         while (current) {
-            console.log(current.val);
+            valueList.push(current.val);
             current = current?.next;
         }
+        return valueList;
     }
 }

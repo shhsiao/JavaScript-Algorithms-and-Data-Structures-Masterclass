@@ -1,4 +1,4 @@
-function binarySearchLoopVersion(sortedList: number[], target: number): number {
+export function binarySearchLoopVersion(sortedList: number[], target: number): number {
     let left = 0,
         right = sortedList.length - 1,
         middle = (right + left) >> 1;
@@ -16,7 +16,7 @@ function binarySearchLoopVersion(sortedList: number[], target: number): number {
     return -1;
 }
 
-function binarySearchRecusionVersion(
+export function binarySearchRecusionVersion(
     sortedList: number[],
     target: number
 ): boolean {
