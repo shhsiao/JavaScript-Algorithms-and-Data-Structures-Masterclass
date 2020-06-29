@@ -1,4 +1,4 @@
-class TreeNode {
+export class TreeNode {
     value: number;
     left: TreeNode | null;
     right: TreeNode | null;
@@ -9,11 +9,11 @@ class TreeNode {
     }
 }
 
-class BinarySearchTree {
+export class BinarySearchTree {
     root: TreeNode | null = null;
     constructor() {}
 
-    insert(value: number) {
+    insert(value: number): BinarySearchTree | null {
         const newNode = new TreeNode(value);
         if (!this.root) {
             this.root = newNode;
@@ -42,17 +42,17 @@ class BinarySearchTree {
         }
     }
 
-    find(value: number) {
+    find(value: number): TreeNode | false {
         if (!this.root) {
             return false;
         }
-        let current: TreeNode | null = this.root,
+        let current: TreeNode = this.root,
             found = false;
         while (current && !found) {
             if (value < current.value) {
-                current = current.left;
+                current = <TreeNode>current.left;
             } else if (value > current.value) {
-                current = current.right;
+                current = <TreeNode>current.right;
             } else {
                 found = true;
             }
@@ -60,7 +60,7 @@ class BinarySearchTree {
         return current;
     }
 
-    constain(value: number) {
+    contain(value: number): boolean {
         if (!this.root) {
             return false;
         }
@@ -77,7 +77,7 @@ class BinarySearchTree {
         return false;
     }
 
-    BFS() {
+    BFS(): number[] {
         let node = this.root as TreeNode;
         const data: number[] = [],
             queue: TreeNode[] = [];
@@ -95,7 +95,7 @@ class BinarySearchTree {
         return data;
     }
 
-    DFSPreOrder() {
+    DFSPreOrder(): number[] {
         const data: number[] = [];
         const traverse = (node: TreeNode) => {
             data.push(node.value);
@@ -110,7 +110,7 @@ class BinarySearchTree {
         return data;
     }
 
-    DFSPostOrder() {
+    DFSPostOrder(): number[] {
         const data: number[] = [];
         const traverse = (node: TreeNode) => {
             if (node.left) {
@@ -125,7 +125,7 @@ class BinarySearchTree {
         return data;
     }
 
-    DFSInOrder() {
+    DFSInOrder(): number[] {
         const data: number[] = [];
         const traverse = (node: TreeNode) => {
             if (node.left) {
